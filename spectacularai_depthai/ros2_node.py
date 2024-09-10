@@ -113,7 +113,7 @@ class SpectacularAINode(Node):
         config.useSlam = True
 
         self.get_logger().info("Starting VIO") # Example of logging.
-        self.vio_pipeline = spectacularAI.depthai.Pipeline(self.pipeline, config, self.onMappingOutput)
+        self.vio_pipeline = spectacularAI.depthai.Pipeline(self.pipeline, config)
         self.device = depthai.Device(self.pipeline)
         self.vio_session = self.vio_pipeline.startSession(self.device)
         self.timer = self.create_timer(0, self.processOutput)
